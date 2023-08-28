@@ -112,72 +112,69 @@ nrc_words <- cleaned_text %>%
   inner_join(get_sentiments("nrc"), by = "word", relationship = "many-to-many")
 
 
-# Subset data for pre and post COVID periods
-pre_covid <- nrc_words[nrc_words$gender == "pre", ]
-post_covid <- nrc_words[nrc_words$gender == "post", ]
-
+#Without normalization 
+  # Subset data for pre and post COVID periods
+  female_covid <- nrc_words[nrc_words$gender == "female", ]
+  male_covid <- nrc_words[nrc_words$gender == "male", ]
+  
 # Create a custom color palette
-custom_palette <- c("#1f77b4", "#ff7f0e")
-
-# Create a bar graph for pre covid 
-ggplot(data = pre_covid, aes(x = sentiment, fill = gender)) +
-  geom_bar(position = "dodge") +
-  scale_fill_manual(values = custom_palette) +  # Apply custom color palette
-  theme_minimal() +
-  xlab("Sentiment") + ylab("Total Count") +
-  ggtitle("Total Sentiment Score for Men and Women Before and After COVID") +
-  scale_fill_discrete(name = "Gender") +
-  facet_grid(. ~ period, labeller = label_parsed)
-
-# Create a bar graph for post covid 
-ggplot(data = post_covid, aes(x = sentiment, fill = gender)) +
-  geom_histogram(aes( y= after_stat(density) )) +
-  scale_fill_manual(values = custom_palette) +  # Apply custom color palette
-  theme_minimal() +
-  xlab("Sentiment") + ylab("Total Count") +
-  ggtitle("Total Sentiment Score for Men and Women Before and After COVID") +
-  scale_fill_discrete(name = "Gender") +
-  facet_grid(. ~ period, labeller = label_parsed)
-
-
-
-
-
-female_covid <- nrc_words[nrc_words$gender == "female", ]
-male_covid <- nrc_words[nrc_words$gender == "male", ]
-
-# Calculate normalized counts for pre_covid dataframe
-female_covid_norm <- female_covid %>%
-  group_by(period, sentiment) %>%
-  summarise(total_count = n(), .groups = "drop") %>%
-  group_by(period) %>%
-  mutate(normalized_count = total_count / sum(total_count) , .groups = "drop")
-
-# Calculate normalized counts for post_covid dataframe
-male_covid_norm <- male_covid %>%
-  group_by(period, sentiment) %>%
-  summarize(total_count = n(), .groups = "drop") %>%
-  group_by(period) %>%
-  mutate(normalized_count = total_count / sum(total_count), .groups = "drop")
-
-# Combine normalized dataframes
-normalized_data <- bind_rows(
-  mutate(female_covid_norm, gender = "female"),
-  mutate(male_covid_norm, gender = "male")
-)
-
-# Define custom color palette
-custom_palette <- c("#E69F00", "#56B4E9")
-
-# Create the bar graph with normalized data
-ggplot(data = normalized_data, aes(x = sentiment, y = normalized_count, fill = gender)) +
-  geom_bar(position = "dodge", stat = "identity") +
-  scale_fill_manual(values = custom_palette) +
-  theme_minimal() +
-  xlab("Sentiment") + ylab("Normalized Count") +
-  ggtitle("Normalized Sentiment Distribution for Men and Women Before and After COVID") +
-  scale_fill_discrete(name = "Gender") +
-  facet_grid(. ~ period, labeller = label_parsed)
-
-#sync to git
-
+  custom_palette <- c("#1f77b4", "#ff7f0e")
+  
+ # Create a bar graph for pre covid 
+  ggplot(data = pre_covid, aes(x = sentiment, fill = gender)) +
+    geom_bar(position = "dodge") +
+    scale_fill_manual(values = custom_palette) +  # Apply custom color palette
+    theme_minimal() +
+    xlab("Sentiment") + ylab("Total Count") +
+    ggtitle("Total Sentiment Score for Men and Women Before and After COVID") +
+    scale_fill_discrete(name = "Gender") +
+    facet_grid(. ~ period, labeller = label_parsed)
+  
+  # Create a bar graph for post covid 
+  ggplot(data = post_covid, aes(x = sentiment, fill = gender)) +
+    geom_histogram(aes( y= after_stat(density) )) +
+    scale_fill_manual(values = custom_palette) +  # Apply custom color palette
+    theme_minimal() +
+    xlab("Sentiment") + ylab("Total Count") +
+    ggtitle("Total Sentiment Score for Men and Women Before and After COVID") +
+    scale_fill_discrete(name = "Gender") +
+    facet_grid(. ~ period, labeller = label_parsed)
+  
+  
+  
+  
+#With normalization 
+  # Calculate normalized counts for pre_covid dataframe
+  female_covid_norm <- female_covid %>%
+    group_by(period, sentiment) %>%
+    summarise(total_count = n(), .groups = "drop") %>%
+    group_by(period) %>%
+    mutate(normalized_count = total_count / sum(total_count) , .groups = "drop")
+  
+  # Calculate normalized counts for post_covid dataframe
+  male_covid_norm <- male_covid %>%
+    group_by(period, sentiment) %>%
+    summarize(total_count = n(), .groups = "drop") %>%
+    group_by(period) %>%
+    mutate(normalized_count = total_count / sum(total_count), .groups = "drop")
+  
+  # Combine normalized dataframes
+  normalized_data <- bind_rows(
+    mutate(female_covid_norm, gender = "female"),
+    mutate(male_covid_norm, gender = "male")
+  )
+  
+  # Define custom color palette
+  custom_palette <- c("#E69F00", "#56B4E9")
+  
+  # Create the bar graph with normalized data
+  ggplot(data = normalized_data, aes(x = sentiment, y = normalized_count, fill = gender)) +
+    geom_bar(position = "dodge", stat = "identity") +
+    scale_fill_manual(values = custom_palette) +
+    theme_minimal() +
+    xlab("Sentiment") + ylab("Normalized Count") +
+    ggtitle("Normalized Sentiment Distribution for Men and Women Before and After COVID") +
+    scale_fill_discrete(name = "Gender") +
+    facet_grid(. ~ period, labeller = label_parsed)
+  
+  
