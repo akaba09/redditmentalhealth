@@ -20,6 +20,7 @@ For the data I primarily utilized the depression datasets provided in the study.
 
 * Post-Pandemic Dataset: The post-pandemic dataset encompasses the time frame from January 1 to April 2020, a period marked by the initial impact and response to the pandemic.
 
+### Description of Data
 |Variables|Usage|
 |:---|:---|
 |Subreddit|type of subreddit depression|
@@ -27,11 +28,13 @@ For the data I primarily utilized the depression datasets provided in the study.
 |gender|male or female subreddit user|
 |covid period|pre or post|
 
-Given, that there were far more psot for pre pandemic using [push shift][] 
+Given, that there were far more psot for pre pandemic using [push shift][] I was able to pull 1000 more reddit posts from 2023 to make the datasets a bit more identical in length/amount. Access to the code for the pull is [here][https://github.com/akaba09/redditmentalhealth/blob/main/code/API_data/Pulled_data%20.ipynb] and the cleaned dataset is [here][https://github.com/akaba09/redditmentalhealth/blob/main/files/dep.csv]. 
+
 ## Data Cleaning
+The data cleaning was done in Python, which can be accessed [here][https://github.com/akaba09/redditmentalhealth/blob/main/code/EDA/01_Clean_data.ipynb]. I used regular expressions to eliminate special characters, numeric characters, html, and URLs. I also used it to filter out specific expressions that were gender identifying in order to categorize each post by gender. 
 
 ## Exploring the Data
-
+The expl
 ## Models 
 
 ## Conclusion
