@@ -6,7 +6,7 @@ In response to the striking knowledge gaps surrounding men's mental health and v
 
 *ADD VISUAL FROM CANVA ![here]()
 
-I did an in-depth examination of Reddit postings dealing with depression in the context of humanitarian inseurities. I used sentiment analysis techniques and Natural Language Processing (NLP) methodologies, particularly zero-shot classifier. In order to identify and categorize topics and themes the most prevalent in this dataset in order to capture the distinct emotional essence and subtle nuances embedded in these posts between male and female. -> edit tmm
+I did an in-depth examination of Reddit postings dealing with depression in the context of humanitarian inseurities. I used sentiment analysis techniques and Natural Language Processing (NLP) methodologies, particularly zero-shot classifier. In order to identify and categorize topics and themes the most prevalent in this dataset and capture the distinct emotional essence and subtle nuances embedded in these posts between male and female. -> edit tmm
 
 ## Problem Statement
 In the context of humanitarian crises, conflicts, and violence, there exists a noticeable lack of discourse surrounding men's mental health and victimhood. While substantial attention has been directed towards addressing the mental well-being of women and children in such challenging circumstances, there is an alarming lack of research and discourse centered on the mental health struggles and experiences of men. This gap in understanding and acknowledgment raises significant concerns about the holistic well-being of all individuals affected by humanitarian insecurities.
@@ -28,13 +28,15 @@ For the data I primarily utilized the depression datasets provided in the study.
 |gender|male or female subreddit user|
 |covid period|pre or post|
 
-Given, that there were far more psot for pre pandemic using [push shift][] I was able to pull 1000 more reddit posts from 2023 to make the datasets a bit more identical in length/amount. Access to the code for the pull is [here](https://github.com/akaba09/redditmentalhealth/blob/main/code/API_data/Pulled_data%20.ipynb) and the cleaned dataset is [here](https://github.com/akaba09/redditmentalhealth/blob/main/files/dep.csv). 
+Given, that there were far more psot for pre pandemic using [push shift](https://pushshift.io/signup) I was able to pull 1000 more reddit posts from 2023 to make the datasets a bit more identical in length/amount. Access to the code for the pull is [here](https://github.com/akaba09/redditmentalhealth/blob/main/code/API_data/Pulled_data%20.ipynb) and the cleaned dataset is [here](https://github.com/akaba09/redditmentalhealth/blob/main/files/dep.csv). 
 
 ## Data Cleaning
 The data cleaning was done in Python, which can be accessed [here](https://github.com/akaba09/redditmentalhealth/blob/main/code/EDA/01_Clean_data.ipynb). I used regular expressions to eliminate special characters, numeric characters, html, and URLs. I also used it to filter out specific expressions that were gender identifying in order to categorize each post by gender. 
 
 ## Exploring the Data
-The expl
+While conducting exploratory data analysis I wanted to explore common words (bigrams and trigrams) of common words used between both genders during the pre and post pandemic. I started off by first 
+
+
 ## Models 
 
 ## Conclusion
