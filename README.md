@@ -41,7 +41,9 @@ TThe notebook for exploring the frequency of common words between genders can be
 Considering the prevalent societal stigma associated with men being less inclined to openly discuss their emotional and mental well-being, the trigram analysis revealed a significant disparity in the usage of "long story short" between male and female subreddit users. Notably, male users tended to utilize indirect adjectives more frequently, whereas female users favored direct adjectives when discussing their well-being. Given the anonymous nature of Reddit and its primarily male user base, it's noteworthy that female users still demonstrate a higher level of openness regarding their emotional and mental well-being.
 
 ## Models 
-I first started off by conducting topic modeling, specifically BERTopic modeling, to categorize the various types of issues that male and female users in the subreddits discussed by extracting key features using BERT and clustering them into distinct topics.
+
+### BERTopic 
+I first started off by conducting [topic modeling](https://github.com/akaba09/redditmentalhealth/blob/main/code/Topic_modeling.ipynb), specifically BERTopic modeling, to categorize the various types of issues that male and female users in the subreddits discussed by extracting key features using BERT and clustering them into distinct topics.
 
 Of the BERTopic ngrams provided, here are the top 3 ngrams from topics 1-6:
 |topic number|topic ngram 1|topic ngram 2|topic ngram 3|
@@ -56,7 +58,18 @@ Of the BERTopic ngrams provided, here are the top 3 ngrams from topics 1-6:
 
 For the full tabular output of the various ngram topics they can be viewed [here](https://github.com/akaba09/redditmentalhealth/blob/main/files/BERTopic_model.csv)
 
-An interesting 
+Something interesting that I found from the model was that "open track" was a prevalent topic, followed by the subtopics of a bunch of links to playlists recommended by other Reddit users. Could music be an outlet of expression or therapy for many of the subreddit users? Does it help them express what they can't say? Here's the [link](https://open.spotify.com/user/9jif2jecb7qpfw25qyz20c9ed/playlist/2Ka8i0P9BGogjccGz0FiE5?si=-p9yt61-QLqQhbqS2uED1w) to a glimpse of one of the playlists recommended by a subreddit user. 
+
+### Sentiment Analysis 
+Following the use of BERTopic modeling, I decided to use sentiment analysis using a zero-shot classfication model from [HuggingFace](https://huggingface.co/MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli). 
+
+* [Zero-Shot Classification](https://github.com/akaba09/redditmentalhealth/blob/main/code/zero_shot_classification.ipynb): Is a task in natural language processing where a model is trained on a set of labeled examples but is then able to classify new examples from previously unseen classes.
+
+I assigned the model a bunch of labels such as "anticipation", "anger", "disgust", "fear", "joy", "trust" to understand how the overall nuances surrounding depression had changed between both genders given the covid-period the posts were made.
+
+![temp image](https://github.com/akaba09/redditmentalhealth/blob/main/img/sentiment_post.png)
+
+Looking at the 
 
 ## Conclusion
 
