@@ -34,10 +34,28 @@ Given, that there were far more psot for pre pandemic using [push shift](https:/
 The data cleaning was done in Python, which can be accessed [here](https://github.com/akaba09/redditmentalhealth/blob/main/code/EDA/01_Clean_data.ipynb). I used regular expressions to eliminate special characters, numeric characters, html, and URLs. I also used it to filter out specific expressions that were gender identifying in order to categorize each post by gender. 
 
 ## Exploring the Data
-While conducting exploratory data analysis I wanted to explore common words (bigrams and trigrams) of common words used between both genders during the pre and post pandemic. I started off by first 
+While conducting exploratory data analysis, I aimed to investigate common bigrams and trigrams used by both genders in discussions before and after the pandemic.
 
+TThe notebook for exploring the frequency of common words between genders can be accessed ![here](https://github.com/akaba09/redditmentalhealth/blob/main/img/trigram_pre.png)
+
+Considering the prevalent societal stigma associated with men being less inclined to openly discuss their emotional and mental well-being, the trigram analysis revealed a significant disparity in the usage of "long story short" between male and female subreddit users. Notably, male users tended to utilize indirect adjectives more frequently, whereas female users favored direct adjectives when discussing their well-being. Given the anonymous nature of Reddit and its primarily male user base, it's noteworthy that female users still demonstrate a higher level of openness regarding their emotional and mental well-being.
 
 ## Models 
+I first started off by conducting topic modeling, specifically BERTopic modeling, to categorize the various types of issues that male and female users in the subreddits discussed by extracting key features using BERT and clustering them into distinct topics.
+
+Of the BERTopic ngrams provided, here are the top 3 ngrams from topics 1-6:
+|topic number|topic ngram 1|topic ngram 2|topic ngram 3|
+|0|ton work|motivated work|work semester|constant reminder|
+|1|weight gain|bring doctor|mg wellbutrin|
+|2|help help|help depression|think burden|
+|3|medical student|tell parents|parents depression|
+|4|personal level|age look|make friendship|
+|5|person thoughts|tell people kill|lot suicidal|
+|6|open track|owmfjtupls lgphmhscwymepbbdz|cilqvodbwctphoukbs zll|
+
+For the full tabular output of the various ngram topics they can be viewed [here](https://github.com/akaba09/redditmentalhealth/blob/main/files/BERTopic_model.csv)
+
+An interesting 
 
 ## Conclusion
 
