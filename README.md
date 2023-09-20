@@ -45,6 +45,7 @@ I first started off by conducting topic modeling, specifically BERTopic modeling
 
 Of the BERTopic ngrams provided, here are the top 3 ngrams from topics 1-6:
 |topic number|topic ngram 1|topic ngram 2|topic ngram 3|
+|:---|:---|:---|:---|
 |0|ton work|motivated work|work semester|constant reminder|
 |1|weight gain|bring doctor|mg wellbutrin|
 |2|help help|help depression|think burden|
