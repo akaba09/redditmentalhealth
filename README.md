@@ -71,12 +71,13 @@ I assigned a bunch of labels to the model, such as "anticipation", "anger", "dis
 
 Looking at the plot, we can see that the overall posts were categorized as either having positive or negative sentiments. Given the minimal nuances, I decided to exclude those labels and use Zero-Shot Classification to get a more comprehensive result of how sentiments around depression has chagned for both genders, pre/post covid. 
 
-Here's a brief snippet of the models output:
+Here's a brief snippet of the model's output:
 |index|subreddit|date|text|covid period|gender|labels|themesScores|
 |:---|:---|:---|:---|:---|:---|:---|:---|
-|0|depression|8/28/19|9/28/19|The sun hasn't even come up, and I'm f ready to go to bed again. So, I've got this weird thing where I'm depressed and anxious for a few days each month. Some months I'm fine, but it is usually the same time each month. My guess is it is hormone-related. Anyhow, I am so very grateful for everything I have in life, but I just can't help the way I feel. I know it's only temporary, but my boyfriend has left to work, and I'm laying here, just overwhelmed with emotions and crying.|pre|female|[anticipation, trust, fear]|[0.85821, 0.12961, 0.01218]|
+|0|depression|8/28/19|The sun hasn't even come up, and I'm f ready to go to bed again. So, I've got this weird thing where I'm depressed and anxious for a few days each month. Some months I'm fine, but it is usually the same time each month. My guess is it is hormone-related. Anyhow, I am so very grateful for everything I have in life, but I just can't help the way I feel. I know it's only temporary, but my boyfriend has left to work, and I'm laying here, just overwhelmed with emotions and crying.|pre|female|[anticipation, trust, fear]|[0.85821, 0.12961, 0.01218]|
+|440|depression|7/25/23|on lexapro for months now and at the same time i started omprezalone for gerd last monday a day or two before these thoughts started my med lady switched me to protonix stomach meds and kept the lexapro the same she also had me taking almost mg of magnesium every day and iu of vitamin d my question is has anyone experienced this before and how did you overcome this my therapist believes it is depression getting the better of me and that the new stomach meds i am on are causing a bad reaction please give me hope i want to marry this girl|post|male|[fear, anticipation, joy]|[0.76342,0.2158, 0.02078]|
 
-From this output we can see how the model is more refined and highlights nuanced emotional dynamics, capturing complexities beyond standard positive or negative sentiments in the provided text. It emphasizes the model's capacity to discern and interpret subtle variations in emotional expression, offering a richer understanding of mental and emotional experiences.
+From this output, we can see how the model is more refined and highlights nuanced emotional dynamics, capturing complexities beyond standard positive or negative sentiments in the provided text. It emphasizes the model's capacity to discern and interpret subtle variations in emotional expression, offering a richer understanding of mental and emotional experiences between both genders.
 
 Access to the full output is [here](https://github.com/akaba09/redditmentalhealth/blob/main/files/Zero_sentiment.csv) 
 
