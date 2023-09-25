@@ -69,7 +69,7 @@ I assigned the model a bunch of labels such as "anticipation", "anger", "disgust
 
 ![temp image](https://github.com/akaba09/redditmentalhealth/blob/main/img/sentiment_post.png)
 
-Looking at the 
+Looking at the [naturally negative and positive sentiments are going to have the most scores]
 
 ## Conclusion
 
