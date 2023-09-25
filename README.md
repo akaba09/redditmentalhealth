@@ -65,13 +65,20 @@ Following the use of BERTopic modeling, I decided to use sentiment analysis usin
 
 * [Zero-Shot Classification](https://github.com/akaba09/redditmentalhealth/blob/main/code/zero_shot_classification.ipynb): Is a task in natural language processing where a model is trained on a set of labeled examples but is then able to classify new examples from previously unseen classes.
 
-I assigned the model a bunch of labels such as "anticipation", "anger", "disgust", "fear", "joy", "trust" to understand how the overall nuances surrounding depression had changed between both genders given the covid-period the posts were made.
+I assigned a bunch of labels to the model, such as "anticipation", "anger", "disgust", "fear", "joy", and "trust," to understand how the overall nuances surrounding depression had changed between both genders given the COVID period in which the posts were made.
 
 ![temp image](https://github.com/akaba09/redditmentalhealth/blob/main/img/sentiment_post.png)
 
-Looking at the [naturally negative and positive sentiments are going to have the most scores]
+Looking at the plot, we can see that the overall posts were categorized as either having positive or negative sentiments. Given the minimal nuances, I decided to exclude those labels and use Zero-Shot Classification to get a more comprehensive result of how sentiments around depression has chagned for both genders, pre/post covid. 
+
+Here's a brief snippet of the models output:
+|index|subreddit|date|text|covid period|gender|labels|themesScores|
+|:---|:---|:---|:---|:---|:---|:---|:---|
+|0|depression|8/28/19|9/28/19|The sun hasn't even come up, and I'm f ready to go to bed again. So, I've got this weird thing where I'm depressed and anxious for a few days each month. Some months I'm fine, but it is usually the same time each month. My guess is it is hormone-related. Anyhow, I am so very grateful for everything I have in life, but I just can't help the way I feel. I know it's only temporary, but my boyfriend has left to work, and I'm laying here, just overwhelmed with emotions and crying.|pre|female|[anticipation, trust, fear]|[0.85821, 0.12961, 0.01218]|
+
+From this output we can see how the model is more refined and highlights nuanced emotional dynamics, capturing complexities beyond standard positive or negative sentiments in the provided text. It emphasizes the model's capacity to discern and interpret subtle variations in emotional expression, offering a richer understanding of mental and emotional experiences.
+
+Access to the full output is [here](https://github.com/akaba09/redditmentalhealth/blob/main/files/Zero_sentiment.csv) 
 
 ## Conclusion
-
-## Next Steps
-
+Overall, 
