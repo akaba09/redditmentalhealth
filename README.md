@@ -4,6 +4,8 @@ This project takes inspiration from the pioneering work of Low, D. M., Rumker, L
 ### Executive Summary
 In the context of humanitarian crises, conflicts, and violence, there is a lack of research surrounding men's mental health and victimhood. While substantial attention has been directed towards addressing the well-being of women and children, the discourse centered on men's mental health struggles and experiences is slow to follow. This research project leverages Natural Language Processing (NLP) techniques to delve into Reddit discussions related to depression. By doing so, I aspire to contribute to a more inclusive and comprehensive approach to addressing mental well-being.
 
+![image](https://github.com/akaba09/redditmentalhealth/blob/main/img/reddit.png)
+
 I used sentiment analysis, zero-shot classifier, and topic modeling to explore posts in the r/depression subreddit before and after the pandemic. 
 
 ### Problem Statement
