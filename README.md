@@ -16,7 +16,7 @@ Reddit is a popular platform for sharing personal experiences. With a predominat
 ### Data
 I used the depression datasets provided in the study. I focused on two distnict datasets, namely [pre](https://zenodo.org/record/3941387/files/depression_pre_features_tfidf_256.csv?download=1) and [post](https://zenodo.org/record/3941387/files/depression_post_features_tfidf_256.csv?download=1) pandemic. 
 
-* Pre-Pandemic Dataset: This dataset covers the period from December 2018 to December 2019, offering insights into discussions on depression before the outbreak of the COVID-19 pandemic.
+* Pre-Pandemic Dataset: This dataset covers the period from December 2018 to December 2019, offering insights into discussions on depression before the outbreak of the COVID-19 pandemic. Data source: Low, D. M., Rumker, L., Torous, J., Cecchi, G., Ghosh, S. S., & Talkar, T. (2020). Natural Language Processing Reveals Vulnerable Mental Health Support Groups and Heightened Health Anxiety on Reddit During COVID-19: Observational Study. Journal of medical Internet research, 22(10), e22635.
 
 * Post-Pandemic Dataset: The post-pandemic dataset encompasses the time frame from January 1 to April 2020, a period marked by the initial impact and response to the pandemic. Given, that there were far more posts for pre-pandemic, I used [push shift reddit API](https://pushshift.io/signup) to pull 1000 more posts. Access to the code for the pull is [here](https://github.com/akaba09/redditmentalhealth/blob/main/code/API_data/Pulled_data%20.ipynb) and the cleaned dataset is [here](https://github.com/akaba09/redditmentalhealth/blob/main/files/dep.csv). 
 
